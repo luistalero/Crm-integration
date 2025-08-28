@@ -92,8 +92,8 @@ RUN git rev-parse HEAD > /app/.git_sha
 # Remove unnecessary files
 RUN rm -rf /gems/ruby/3.4.0/cache/*.gem \
   && find /gems/ruby/3.4.0/gems/ \( -name "*.c" -o -name "*.o" \) -delete \
-  && rm -rf .git \
   && rm .gitignore
+# && rm -rf .git \
 
 # final build stage
 FROM ruby:3.4.4-alpine3.21
